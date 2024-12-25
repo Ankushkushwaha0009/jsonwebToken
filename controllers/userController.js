@@ -57,7 +57,7 @@ const getProfile = async (req, res) => {
         if (err) {
             return res.status(403).json({ result: "invalid token" });
         } else {
-            console.log("Decoded Token:", authData);
+            // console.log("Decoded Token:", authData);
             const userId = new mongoose.Types.ObjectId(authData.user._id);
             User.findOne({ _id: userId })
                 .then((user) => {
